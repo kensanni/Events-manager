@@ -1,10 +1,12 @@
+import bcrypt from 'bcrypt'
+
 export default (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     fullname: {
       type: DataTypes.STRING,
       allowNull: {
         args: false,
-        msg: 'Kindly input your first name'
+        msg: 'Kindly input your full name'
       }
     },
     email: {
@@ -37,7 +39,13 @@ export default (sequelize, DataTypes) => {
     role: {
       type: DataTypes.ENUM,
       values: ['superadmin', 'admin', 'user'],
-      defaultValues: 'user'
+      defaultValue: 'user'
+    }
+  }, {
+    hooks: {
+      beforeCreate: (user) => {
+        user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync())
+      }
     }
   })
   User.associate = (models) => {
