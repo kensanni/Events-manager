@@ -21,11 +21,11 @@ module.exports = {
       },
       facilities: {
         allowNull: false,
-        type: Sequelize.ARRAY(Sequelize.TEXT)
+        type: Sequelize.ARRAY(Sequelize.STRING)
       },
       images: {
         allowNull: false,
-        type: Sequelize.ARRAY(Sequelize.TEXT)
+        type: Sequelize.ARRAY(Sequelize.STRING)
       },
       price: {
         allowNull: false,

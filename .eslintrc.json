@@ -1,3 +1,30 @@
 {
-    "extends": "standard"
+    "root": true,
+    "extends": "standard",
+    "env": {
+        "node": true,
+        "es6": true,
+        "mocha": true
+    },
+    "rules": {
+        "valid-jsdoc": [
+            "error",
+            {
+                "requireReturn": true,
+                "requireReturnType": true,
+                "requireParamDescription": false,
+                "requireReturnDescription": true
+            }
+        ],
+        "require-jsdoc": [
+            "error",
+            {
+                "require": {
+                    "FunctionDeclaration": true,
+                    "MethodDefinition": true,
+                    "ClassDeclaration": true
+                }
+            }
+        ]
+    }
 }

@@ -37,7 +37,7 @@ export default (sequelize, DataTypes) => {
     role: {
       type: DataTypes.ENUM,
       values: ['superadmin', 'admin', 'user'],
-      defaultValues: 'user'
+      defaultValue: 'user'
     }
   })
   User.associate = (models) => {

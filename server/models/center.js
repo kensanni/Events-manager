@@ -18,14 +18,14 @@ export default (sequelize, DataTypes) => {
       }
     },
     facilities: {
-      type: DataTypes.ARRAY,
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: {
         args: false,
         msg: 'Please specify the facilities available in your center'
       }
     },
     images: {
-      type: DataTypes.ARRAY,
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: {
         args: false,
         msg: 'Please upload the images of your center for users to see'
