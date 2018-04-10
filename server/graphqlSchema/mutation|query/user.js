@@ -12,6 +12,7 @@ class Users {
    * @returns {object} object
    */
   static async signup ({ fullname, email, password, image, role }) {
+    console.log('$$$$$$$$$$$$$$$', fullname)
     const createUser = await User.create({
       fullname,
       email,
