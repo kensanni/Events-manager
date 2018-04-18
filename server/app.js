@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import dotenv from 'dotenv'
 import express from 'express'
 import bodyParser from 'body-parser'
@@ -7,6 +8,16 @@ import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
 dotenv.config()
 
 // Initialize the application with express
+=======
+import express from 'express'
+import graphqlHTTP from 'express-graphql'
+import dotenv from 'dotenv'
+import schema from './graphqlSchema/index'
+import root from './rootResolver'
+
+dotenv.config()
+
+>>>>>>> develop
 const app = express()
 
 // GraphiQL, a visual editor for queries

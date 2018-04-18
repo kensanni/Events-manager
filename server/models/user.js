@@ -40,12 +40,15 @@ export default (sequelize, DataTypes) => {
       type: DataTypes.ENUM,
       values: ['superadmin', 'admin', 'user'],
       defaultValue: 'user'
+<<<<<<< HEAD
     }
   }, {
     hooks: {
       beforeCreate: (user) => {
         user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync())
       }
+=======
+>>>>>>> develop
     }
   })
   User.associate = (models) => {
