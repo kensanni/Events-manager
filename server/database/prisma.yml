@@ -10,4 +10,5 @@ datamodel: datamodel.graphql
 # You can only access the API when providing JWTs that are signed with this secret
 secret: devsecret
 
-cluster: kensanni-59b7a8/prisma-eu1
+
+cluster: local
