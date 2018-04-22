@@ -1,0 +1,42 @@
+type User {
+  id: ID! @unique
+  fullname: String!
+  email: String!
+  password: String!
+  role: Role! @default(value: "User")
+  center: [Center!]! @relation(name: "CentersByAdmin")
+  event: [Event!]! @relation(name: "EventsByUser")
+}
+
+type Center {
+  id: ID! @unique
+  name: String!
+  location: String!,
+  capacity: Int!,
+  facilities: String!,
+  images: [String!]!,
+  price: Int!,
+  user: User @relation(name: "CentersByAdmin")
+}
+
+type Event {
+  id: ID! @unique
+  title: String!,
+  description: String!,
+  status: Status! @default(value: "Open"),
+  date: DateTime!,
+  center: Center
+  user: User @relation(name: "EventsByUser")
+}
+
+enum Role {
+  Superadmin
+  Admin
+  User
+}
+
+enum Status {
+  Open
+  Closed
+  Cancelled
+}
