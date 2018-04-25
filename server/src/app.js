@@ -1,9 +1,23 @@
 import { GraphQLServer } from 'graphql-yoga'
 import { Prisma } from 'prisma-binding'
-import Query from './resolvers/Query'
+// import Query from './resolvers/Query'
+import User from './resolvers/User'
+import AuthPayLoad from './resolvers/AuthPayload'
+
+const { signup, getUsers } = User
+
+const Mutation = {
+  signup
+}
+
+const Query = {
+  getUsers
+}
 
 const resolvers = {
-  Query
+  Query,
+  Mutation,
+  AuthPayLoad
 }
 
 const server = new GraphQLServer({

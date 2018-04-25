@@ -1,4 +1,22 @@
-# import User from "./generated/prisma.graphql"
+# import Role from "./generated/prisma.graphql"
 type Query {
-  users: [User]
+  getUsers: [User]
+}
+
+type Mutation {
+  signup(fullname: String!, email: String!, password: String!): AuthPayLoad
+}
+
+type AuthPayLoad {
+  token: String
+  user: User
+}
+
+type User {
+  id: ID!
+  fullname: String!
+  email: String!
+  role: Role!
+  center: [Center!]!
+  event: [Event!]!
 }
