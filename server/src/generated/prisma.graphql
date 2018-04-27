@@ -28,7 +28,8 @@ type Event implements Node {
 
 type User implements Node {
   id: ID!
-  fullname: String!
+  fullname: String
+  username: String!
   email: String!
   password: String!
   role: Role!
@@ -1025,7 +1026,8 @@ type UserConnection {
 }
 
 input UserCreateInput {
-  fullname: String!
+  fullname: String
+  username: String!
   email: String!
   password: String!
   role: Role
@@ -1044,7 +1046,8 @@ input UserCreateOneWithoutEventInput {
 }
 
 input UserCreateWithoutCenterInput {
-  fullname: String!
+  fullname: String
+  username: String!
   email: String!
   password: String!
   role: Role
@@ -1052,7 +1055,8 @@ input UserCreateWithoutCenterInput {
 }
 
 input UserCreateWithoutEventInput {
-  fullname: String!
+  fullname: String
+  username: String!
   email: String!
   password: String!
   role: Role
@@ -1078,6 +1082,8 @@ enum UserOrderByInput {
   id_DESC
   fullname_ASC
   fullname_DESC
+  username_ASC
+  username_DESC
   email_ASC
   email_DESC
   password_ASC
@@ -1092,7 +1098,8 @@ enum UserOrderByInput {
 
 type UserPreviousValues {
   id: ID!
-  fullname: String!
+  fullname: String
+  username: String!
   email: String!
   password: String!
   role: Role!
@@ -1135,6 +1142,7 @@ input UserSubscriptionWhereInput {
 
 input UserUpdateInput {
   fullname: String
+  username: String
   email: String
   password: String
   role: Role
@@ -1162,6 +1170,7 @@ input UserUpdateOneWithoutEventInput {
 
 input UserUpdateWithoutCenterDataInput {
   fullname: String
+  username: String
   email: String
   password: String
   role: Role
@@ -1170,6 +1179,7 @@ input UserUpdateWithoutCenterDataInput {
 
 input UserUpdateWithoutEventDataInput {
   fullname: String
+  username: String
   email: String
   password: String
   role: Role
@@ -1301,6 +1311,59 @@ input UserWhereInput {
   All values not ending with the given string.
   """
   fullname_not_ends_with: String
+  username: String
+  """
+  All values that are not equal to given value.
+  """
+  username_not: String
+  """
+  All values that are contained in given list.
+  """
+  username_in: [String!]
+  """
+  All values that are not contained in given list.
+  """
+  username_not_in: [String!]
+  """
+  All values less than the given value.
+  """
+  username_lt: String
+  """
+  All values less than or equal the given value.
+  """
+  username_lte: String
+  """
+  All values greater than the given value.
+  """
+  username_gt: String
+  """
+  All values greater than or equal the given value.
+  """
+  username_gte: String
+  """
+  All values containing the given string.
+  """
+  username_contains: String
+  """
+  All values not containing the given string.
+  """
+  username_not_contains: String
+  """
+  All values starting with the given string.
+  """
+  username_starts_with: String
+  """
+  All values not starting with the given string.
+  """
+  username_not_starts_with: String
+  """
+  All values ending with the given string.
+  """
+  username_ends_with: String
+  """
+  All values not ending with the given string.
+  """
+  username_not_ends_with: String
   email: String
   """
   All values that are not equal to given value.
@@ -1430,4 +1493,6 @@ input UserWhereInput {
 
 input UserWhereUniqueInput {
   id: ID
+  username: String
+  email: String
 }

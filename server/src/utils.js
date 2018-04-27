@@ -10,5 +10,5 @@ export const getUserId = (context) => {
     return userId
   }
 
-  throw new Error('Not authenticates')
+  throw new Error('Not authenticated')
 }

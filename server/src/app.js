@@ -4,10 +4,10 @@ import { Prisma } from 'prisma-binding'
 import User from './resolvers/User'
 import AuthPayLoad from './resolvers/AuthPayload'
 
-const { signup, getUsers } = User
+const { signup, getUsers, login } = User
 
 const Mutation = {
-  signup
+  signup, login
 }
 
 const Query = {

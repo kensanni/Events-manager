@@ -1,7 +1,8 @@
 type User {
   id: ID! @unique
-  fullname: String!
-  email: String!
+  fullname: String
+  username: String! @unique
+  email: String! @unique
   password: String!
   role: Role! @default(value: "User")
   center: [Center!]! @relation(name: "CentersByAdmin")
